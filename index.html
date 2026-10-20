@@ -3,78 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathalie Barros | Portfólio & Currículo</title>
+    <title>Nathalie Barros | Publicidade & Inovação</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
         :root {
-            --primary-color: #6366f1;
-            --secondary-color: #4f46e5;
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-color: #38bdf8;
+            --bg-color: #090d16;
+            --card-bg: #111827;
+            --accent-gradient: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #f472b6 100%);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: rgba(255, 255, 255, 0.08);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 20px;
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(192, 132, 252, 0.15));
+            filter: blur(100px);
+            z-index: -1;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        header .badge {
+            display: inline-block;
+            background: rgba(192, 132, 252, 0.1);
+            color: #c084fc;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(192, 132, 252, 0.2);
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: var(--text-color);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
         }
 
         header h1 span {
-            color: var(--accent-color);
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             background: var(--card-bg);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        section:hover {
+            border-color: rgba(192, 132, 252, 0.3);
         }
 
         section h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
             margin-bottom: 20px;
-            color: var(--accent-color);
-            border-bottom: 2px solid rgba(56, 189, 248, 0.2);
-            padding-bottom: 8px;
+            color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background: var(--accent-gradient);
+            border-radius: 4px;
         }
 
         p {
+            color: var(--text-muted);
             margin-bottom: 15px;
-            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        .highlight-text {
+            color: var(--text-main);
+            font-weight: 600;
         }
 
         .projects-grid {
@@ -84,66 +137,84 @@
         }
 
         .project-card {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid var(--accent-color);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 24px;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(192, 132, 252, 0.4);
         }
 
         .project-card h3 {
+            color: #f3f4f6;
+            font-size: 1.15rem;
             margin-bottom: 8px;
-            color: var(--text-color);
         }
 
-        .contact-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
+        .contact-box {
+            text-align: center;
+            background: linear-gradient(180deg, var(--card-bg) 0%, #171f33 100%);
         }
 
         .btn {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
+            display: inline-block;
+            background: var(--accent-gradient);
+            color: #090d16;
+            padding: 14px 30px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
+            font-weight: 800;
+            margin-top: 15px;
+            box-shadow: 0 4px 20px rgba(192, 132, 252, 0.3);
+            transition: opacity 0.3s ease, transform 0.2s ease;
         }
 
         .btn:hover {
-            background-color: var(--secondary-color);
+            opacity: 0.9;
+            transform: scale(1.02);
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.3rem; }
+            .container { padding: 30px 15px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="hero-glow"></div>
+
     <div class="container">
-        <!-- TOPO / APRESENTAÇÃO -->
+        <!-- TOPO -->
         <header>
+            <span class="badge">Disponível para novos projetos</span>
             <h1>Nathalie <span>Barros</span></h1>
-            <p>Futura Publicitária | Criatividade, Inovação e Tecnologia</p>
+            <p>Futura Publicitária movida por criatividade estratégica, inovação e inteligência artificial.</p>
         </header>
 
         <!-- SOBRE MIM -->
         <section>
             <h2>Sobre Mim</h2>
-            <p>Olá! Sou estudante no último ano de Publicidade e Propaganda na Unicesumar. Sou apaixonada por unir a comunicação estratégica com o universo da tecnologia e da inteligência artificial, buscando sempre criar experiências que façam a diferença.</p>
+            <p>Sou estudante no último ano de <span class="highlight-text">Publicidade e Propaganda na Unicesumar</span>. Acredito que a verdadeira comunicação vai muito além do anúncio: ela cria conexões reais, resolve problemas e abraça a tecnologia para transformar o futuro das marcas.</p>
         </section>
 
-        <!-- FORMAÇÃO -->
+        <!-- FORMAÇÃO & PESQUISA -->
         <section>
-            <h2>Formação Acadêmica</h2>
-            <p><strong>Graduação em Publicidade e Propaganda</strong> — Unicesumar (Conclusão em 2026)</p>
-            <p>Atuação em pesquisas acadêmicas (PIBIC) focadas na integração de inteligência artificial generativa no ecossistema publicitário e educacional.</p>
+            <h2>Formação & Pesquisa</h2>
+            <p><span class="highlight-text">Graduação em Publicidade e Propaganda</span> — Unicesumar (Conclusão em 2026)</p>
+            <p>Atuação dedicada em pesquisas acadêmicas (PIBIC), investigando a integração, os impactos e a ética do uso de inteligência artificial generativa no ecossistema publicitário e educacional.</p>
         </section>
 
         <!-- PROJETOS -->
@@ -152,22 +223,20 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Meus Medicamentos & Meus Medicamentos - Cuidador</h3>
-                    <p>Desenvolvimento de aplicativos voltados para o gerenciamento e suporte no uso de medicamentos, facilitando a rotina de pacientes e cuidadores.</p>
+                    <p>Concepção e desenvolvimento de soluções mobile voltadas para o gerenciamento inteligente de rotinas médicas, unindo utilidade prática, design centrado no usuário e tecnologia de ponta.</p>
                 </div>
             </div>
         </section>
 
         <!-- CONTATO -->
-        <section style="text-align: center;">
-            <h2>Vamos Conversar?</h2>
-            <p>Estou sempre aberta a novos desafios, conexões e oportunidades na área de publicidade e inovação.</p>
-            <div class="contact-links">
-                <a href="mailto:seu-email@exemplo.com" class="btn">Me mandar um e-mail</a>
-            </div>
+        <section class="contact-box">
+            <h2>Vamos criar algo incrível juntos?</h2>
+            <p>Estou aberta a oportunidades, parcerias e novos desafios na área de comunicação e inovação.</p>
+            <a href="mailto:seu-email@exemplo.com" class="btn">Entrar em Contato</a>
         </section>
 
         <footer>
-            <p>&copy; 2026 Nathalie Barros. Feito com carinho e código.</p>
+            <p>&copy; 2026 Nathalie Barros. Criado com design autoral e código.</p>
         </footer>
     </div>
 
