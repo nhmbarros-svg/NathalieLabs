@@ -50,7 +50,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             position: relative;
         }
 
@@ -130,13 +130,42 @@
             font-weight: 600;
         }
 
+        /* Estilo para a Notícia em Destaque */
+        .news-card {
+            background: linear-gradient(135deg, rgba(192, 132, 252, 0.08) 0%, rgba(129, 140, 248, 0.08) 100%);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid rgba(192, 132, 252, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-badge {
+            display: inline-block;
+            background: #f472b6;
+            color: #090d16;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .news-card h3 {
+            color: #f3f4f6;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
         }
 
-        .project-card {
+        .project-card, .publication-card {
             background: rgba(255, 255, 255, 0.02);
             padding: 24px;
             border-radius: 14px;
@@ -144,16 +173,43 @@
             transition: all 0.3s ease;
         }
 
-        .project-card:hover {
+        .project-card:hover, .publication-card:hover {
             transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.04);
             border-color: rgba(192, 132, 252, 0.4);
         }
 
-        .project-card h3 {
+        .publication-card h3 {
             color: #f3f4f6;
             font-size: 1.15rem;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        .doi-tag {
+            display: inline-block;
+            background: rgba(129, 140, 248, 0.1);
+            color: #818cf8;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: monospace;
+            margin-top: 8px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(129, 140, 248, 0.2);
+        }
+
+        .link-btn {
+            display: inline-block;
+            color: #c084fc;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .link-btn:hover {
+            color: #f472b6;
+            text-decoration: underline;
         }
 
         .contact-box {
@@ -204,17 +260,36 @@
             <p>Futura Publicitária movida por criatividade estratégica, inovação e inteligência artificial.</p>
         </header>
 
+        <!-- NOTÍCIAS / DESTAQUES RECENTES -->
+        <section>
+            <h2>Últimas Notícias & Conquistas</h2>
+            <div class="news-card">
+                <span class="news-badge">Destaque Nacional</span>
+                <h3>Selecionada na Maratona de IA da Academia LED Globo! 🚀</h3>
+                <p>Fui selecionada entre os 80 universitários de todo o país para a próxima fase da Maratona de Inteligência Artificial da Academia LED Globo, concorrendo em uma imersão focada em inovação e criatividade.</p>
+                <div>
+                    <a href="https://oglobo.globo.com" target="_blank" class="link-btn">Ver cobertura oficial no O Globo →</a>
+                </div>
+            </div>
+        </section>
+
         <!-- SOBRE MIM -->
         <section>
             <h2>Sobre Mim</h2>
             <p>Sou estudante no último ano de <span class="highlight-text">Publicidade e Propaganda na Unicesumar</span>. Acredito que a verdadeira comunicação vai muito além do anúncio: ela cria conexões reais, resolve problemas e abraça a tecnologia para transformar o futuro das marcas.</p>
         </section>
 
-        <!-- FORMAÇÃO & PESQUISA -->
+        <!-- PUBLICAÇÃO & PESQUISA -->
         <section>
-            <h2>Formação & Pesquisa</h2>
-            <p><span class="highlight-text">Graduação em Publicidade e Propaganda</span> — Unicesumar (Conclusão em 2026)</p>
-            <p>Atuação dedicada em pesquisas acadêmicas (PIBIC), investigando a integração, os impactos e a ética do uso de inteligência artificial generativa no ecossistema publicitário e educacional.</p>
+            <h2>Pesquisa & Publicações</h2>
+            <div class="publication-card">
+                <h3>A Percepção dos Formandos de Publicidade sobre o Uso de Inteligências Artificiais Generativas: Desafios e Oportunidades</h3>
+                <p>Pesquisa acadêmica (PIBIC) investigando a integração, os impactos e a ética do uso de IA generativa no ecossistema publicitário e educacional.</p>
+                <div class="doi-tag">DOI: 10.29327/epcc-encontro-internacional-de-producao-cientifica-538953.1315721</div>
+                <div>
+                    <a href="https://www.even3.com.br/anais/epcc-encontro-internacional-de-producao-cientifica-538953/1315721-a-percepcao-dos-formandos-de-publicidade-sobre-o-uso-de-inteligencias-artificiais-generativas--desafios-e-oportu/" target="_blank" class="link-btn">Acessar publicação completa →</a>
+                </div>
+            </div>
         </section>
 
         <!-- PROJETOS -->
@@ -232,7 +307,7 @@
         <section class="contact-box">
             <h2>Vamos criar algo incrível juntos?</h2>
             <p>Estou aberta a oportunidades, parcerias e novos desafios na área de comunicação e inovação.</p>
-            <a href="mailto:seu-email@exemplo.com" class="btn">Entrar em Contato</a>
+            <a href="mailto:nhmbarros@gmail.com" class="btn">Entrar em Contato</a>
         </section>
 
         <footer>
