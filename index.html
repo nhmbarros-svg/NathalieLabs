@@ -3,120 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathalie Barros | Publicidade & Inovação</title>
+    <title>Nathalie Labs | Publicidade, Inovação & Tecnologia</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
 
         :root {
-            --bg-color: #090d16;
-            --card-bg: #111827;
-            --accent-gradient: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #f472b6 100%);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --border-color: rgba(255, 255, 255, 0.08);
+            --bg-color: #f2d5d8; /* Tom rosado suave do Canva */
+            --container-bg: #fffafb;
+            --primary-color: #6b4c53;
+            --accent-color: #b37d86;
+            --text-main: #3d2c30;
+            --text-muted: #7d6569;
+            --card-bg: #ffffff;
+            --border-color: rgba(179, 125, 134, 0.2);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
             line-height: 1.7;
-            overflow-x: hidden;
+            padding: 20px 10px;
         }
 
-        .hero-glow {
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(192, 132, 252, 0.15));
-            filter: blur(100px);
-            z-index: -1;
-        }
-
-        .container {
+        .page-wrapper {
             max-width: 900px;
             margin: 0 auto;
-            padding: 60px 20px;
+            background-color: var(--container-bg);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 35px rgba(107, 76, 83, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
+        /* Menu de Navegação */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: lowercase;
+            transition: color 0.3s;
+            position: plain;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Topo / Logo */
         header {
             text-align: center;
             margin-bottom: 50px;
-            position: relative;
         }
 
-        header .badge {
-            display: inline-block;
-            background: rgba(192, 132, 252, 0.1);
-            color: #c084fc;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid rgba(192, 132, 252, 0.2);
-        }
-
-        header h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 15px;
+        .logo-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
             letter-spacing: -1px;
-        }
-
-        header h1 span {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
         }
 
         header p {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
+            font-style: italic;
         }
 
+        /* Seções */
         section {
-            margin-bottom: 30px;
+            margin-bottom: 45px;
             background: var(--card-bg);
             padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border-radius: 18px;
             border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(107, 76, 83, 0.03);
         }
 
-        section:hover {
-            border-color: rgba(192, 132, 252, 0.3);
-        }
-
-        section h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
             margin-bottom: 20px;
-            color: #f3f4f6;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        section h2::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 24px;
-            background: var(--accent-gradient);
-            border-radius: 4px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
         }
 
         p {
@@ -125,194 +114,214 @@
             font-size: 1rem;
         }
 
-        .highlight-text {
-            color: var(--text-main);
-            font-weight: 600;
+        /* Estilo Polaroid Sobre Mim */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
-        /* Estilo para a Notícia em Destaque */
-        .news-card {
-            background: linear-gradient(135deg, rgba(192, 132, 252, 0.08) 0%, rgba(129, 140, 248, 0.08) 100%);
-            padding: 25px;
-            border-radius: 16px;
-            border: 1px solid rgba(192, 132, 252, 0.3);
-            position: relative;
-            overflow: hidden;
+        .polaroid {
+            background: white;
+            padding: 12px 12px 30px 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border-radius: 4px;
+            transform: rotate(-2deg);
+            max-width: 220px;
+            margin: 0 auto;
         }
 
-        .news-badge {
-            display: inline-block;
-            background: #f472b6;
-            color: #090d16;
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 6px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
+        .polaroid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 2px;
         }
 
-        .news-card h3 {
-            color: #f3f4f6;
-            font-size: 1.25rem;
-            margin-bottom: 10px;
+        .about-text {
+            flex: 1;
         }
 
-        .projects-grid {
+        /* Cards de Projetos e Publicações */
+        .grid-cards {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
         }
 
-        .project-card, .publication-card {
-            background: rgba(255, 255, 255, 0.02);
+        .card-item {
+            background: #fffafb;
             padding: 24px;
-            border-radius: 14px;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+            transition: transform 0.2s;
         }
 
-        .project-card:hover, .publication-card:hover {
+        .card-item:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(192, 132, 252, 0.4);
         }
 
-        .publication-card h3 {
-            color: #f3f4f6;
-            font-size: 1.15rem;
+        .card-item h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 1.25rem;
             margin-bottom: 10px;
         }
 
         .doi-tag {
             display: inline-block;
-            background: rgba(129, 140, 248, 0.1);
-            color: #818cf8;
+            background: rgba(179, 125, 134, 0.1);
+            color: var(--primary-color);
             padding: 4px 10px;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-family: monospace;
-            margin-top: 8px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(129, 140, 248, 0.2);
+            margin: 8px 0 12px 0;
         }
 
-        .link-btn {
-            display: inline-block;
-            color: #c084fc;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .link-btn:hover {
-            color: #f472b6;
-            text-decoration: underline;
-        }
-
-        .contact-box {
-            text-align: center;
-            background: linear-gradient(180deg, var(--card-bg) 0%, #171f33 100%);
-        }
-
+        /* Botões de Ação (CTAs para Testes) */
         .btn {
             display: inline-block;
-            background: var(--accent-gradient);
-            color: #090d16;
-            padding: 14px 30px;
-            border-radius: 12px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 10px 22px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 800;
-            margin-top: 15px;
-            box-shadow: 0 4px 20px rgba(192, 132, 252, 0.3);
-            transition: opacity 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 10px;
         }
 
         .btn:hover {
-            opacity: 0.9;
+            background-color: var(--accent-color);
             transform: scale(1.02);
         }
 
+        .link-subtle {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .link-subtle:hover {
+            text-decoration: underline;
+        }
+
+        /* Rodapé */
         footer {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 40px;
             color: var(--text-muted);
             font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2.3rem; }
-            .container { padding: 30px 15px; }
+            .logo-title { font-size: 2.8rem; }
+            .about-content { flex-direction: column; text-align: center; }
+            .page-wrapper { padding: 20px 15px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-glow"></div>
+    <div class="page-wrapper">
+        
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav>
+            <a href="#home" class="active">home</a>
+            <a href="#sobre">sobre mim</a>
+            <a href="#projetos">projetos</a>
+            <a href="#curriculo">currículo</a>
+            <a href="#contato">contato</a>
+        </nav>
 
-    <div class="container">
         <!-- TOPO -->
-        <header>
-            <span class="badge">Disponível para novos projetos</span>
-            <h1>Nathalie <span>Barros</span></h1>
-            <p>Futura Publicitária movida por criatividade estratégica, inovação e inteligência artificial.</p>
+        <header id="home">
+            <h1 class="logo-title">Nathalie Labs</h1>
+            <p>Laboratório de Publicidade, Inovação e Tecnologia</p>
         </header>
 
-        <!-- NOTÍCIAS / DESTAQUES RECENTES -->
+        <!-- ÚLTIMAS CONQUISTAS / MARATONA LED -->
         <section>
-            <h2>Últimas Notícias & Conquistas</h2>
-            <div class="news-card">
-                <span class="news-badge">Destaque Nacional</span>
+            <h2>Destaque Recente</h2>
+            <div class="card-item" style="background: linear-gradient(135deg, #fff2f4 0%, #fffafb 100%); border-color: #b37d86;">
+                <span style="display: inline-block; background: #b37d86; color: white; padding: 3px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Reconhecimento Nacional</span>
                 <h3>Selecionada na Maratona de IA da Academia LED Globo! 🚀</h3>
-                <p>Fui selecionada entre os 80 universitários de todo o país para a próxima fase da Maratona de Inteligência Artificial da Academia LED Globo, concorrendo em uma imersão focada em inovação e criatividade.</p>
-                <div>
-                    <a href="https://oglobo.globo.com" target="_blank" class="link-btn">Ver cobertura oficial no O Globo →</a>
-                </div>
+                <p>Entre os 80 universitários selecionados de todo o Brasil para imersão em inteligência artificial, inovação e criatividade na comunicação.</p>
+                <a href="https://oglobo.globo.com" target="_blank" class="link-subtle">Ver cobertura oficial →</a>
             </div>
         </section>
 
         <!-- SOBRE MIM -->
-        <section>
+        <section id="sobre">
             <h2>Sobre Mim</h2>
-            <p>Sou estudante no último ano de <span class="highlight-text">Publicidade e Propaganda na Unicesumar</span>. Acredito que a verdadeira comunicação vai muito além do anúncio: ela cria conexões reais, resolve problemas e abraça a tecnologia para transformar o futuro das marcas.</p>
-        </section>
-
-        <!-- PUBLICAÇÃO & PESQUISA -->
-        <section>
-            <h2>Pesquisa & Publicações</h2>
-            <div class="publication-card">
-                <h3>A Percepção dos Formandos de Publicidade sobre o Uso de Inteligências Artificiais Generativas: Desafios e Oportunidades</h3>
-                <p>Pesquisa acadêmica (PIBIC) investigando a integração, os impactos e a ética do uso de IA generativa no ecossistema publicitário e educacional.</p>
-                <div class="doi-tag">DOI: 10.29327/epcc-encontro-internacional-de-producao-cientifica-538953.1315721</div>
-                <div>
-                    <a href="https://www.even3.com.br/anais/epcc-encontro-internacional-de-producao-cientifica-538953/1315721-a-percepcao-dos-formandos-de-publicidade-sobre-o-uso-de-inteligencias-artificiais-generativas--desafios-e-oportu/" target="_blank" class="link-btn">Acessar publicação completa →</a>
+            <div class="about-content">
+                <div class="polaroid">
+                    <!-- Substitua o link abaixo pela URL da sua foto polaroid enviada no GitHub -->
+                    <img src="sua-foto-polaroid.jpg" alt="Nathalie Barros">
+                    <p style="text-align: center; font-size: 0.8rem; margin-top: 5px; font-family: 'Playfair Display', serif; color: var(--primary-color);">Nathalie</p>
+                </div>
+                <div class="about-text">
+                    <p>Olá! Eu sou a Nathalie, idealizadora do <strong>Nathalie Labs</strong>, acadêmica e desenvolvedora de apps mobile.</p>
+                    <p>Nos últimos anos, descobri que o que eu mais gosto de fazer é criar: primeiro, desenhando marcas e estratégias publicitárias na Unicesumar; agora, unindo a criatividade ao desenvolvimento de soluções mobile e inteligência artificial.</p>
                 </div>
             </div>
         </section>
 
-        <!-- PROJETOS -->
-        <section>
-            <h2>Projetos em Destaque</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Meus Medicamentos & Meus Medicamentos - Cuidador</h3>
-                    <p>Concepção e desenvolvimento de soluções mobile voltadas para o gerenciamento inteligente de rotinas médicas, unindo utilidade prática, design centrado no usuário e tecnologia de ponta.</p>
+        <!-- PROJETOS & APLICATIVOS -->
+        <section id="projetos">
+            <h2>Projetos & Aplicativos</h2>
+            <div class="grid-cards">
+                
+                <!-- App Meus Medicamentos -->
+                <div class="card-item">
+                    <h3>Meus Medicamentos</h3>
+                    <p>Aplicativo desenvolvido para otimizar e organizar o gerenciamento de rotinas medicamentosas, trazendo utilidade prática e design centrado no usuário.</p>
+                    <!-- Substitua o link de exemplo abaixo pelo link real da sua página de teste do app -->
+                    <a href="https://exemplo.com/teste-meus-medicamentos" target="_blank" class="btn">Entre para o grupo de testadores</a>
+                </div>
+
+                <!-- App Meus Medicamentos - Cuidador -->
+                <div class="card-item" style="margin-top: 15px;">
+                    <h3>Meus Medicamentos - Cuidador</h3>
+                    <p>Versão voltada para o suporte e controle de cuidadores, facilitando o monitoramento seguro e humanizado de pacientes.</p>
+                    <!-- Substitua o link de exemplo abaixo pelo link real da sua página de teste -->
+                    <a href="https://exemplo.com/teste-cuidador" target="_blank" class="btn">Entre para o grupo de testadores</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CURRÍCULO & PESQUISA ACADÊMICA -->
+        <section id="curriculo">
+            <h2>Currículo & Pesquisa</h2>
+            <div class="card-item">
+                <h3>A Percepção dos Formandos de Publicidade sobre o Uso de Inteligências Artificiais Generativas</h3>
+                <p>Pesquisa acadêmica (PIBIC - Unicesumar) investigando os desafios e oportunidades da IA na formação profissional e no mercado publicitário.</p>
+                <div class="doi-tag">DOI: 10.29327/epcc-encontro-internacional-de-producao-cientifica-538953.1315721</div>
+                <div>
+                    <a href="https://www.even3.com.br/anais/epcc-encontro-internacional-de-producao-cientifica-538953/1315721-a-percepcao-dos-formandos-de-publicidade-sobre-o-uso-de-inteligencias-artificiais-generativas--desafios-e-oportu/" target="_blank" class="link-subtle">Acessar publicação nos Anais do EPCC →</a>
                 </div>
             </div>
         </section>
 
         <!-- CONTATO -->
-        <section class="contact-box">
-            <h2>Vamos criar algo incrível juntos?</h2>
-            <p>Estou aberta a oportunidades, parcerias e novos desafios na área de comunicação e inovação.</p>
-            <a href="mailto:nhmbarros@gmail.com" class="btn">Entrar em Contato</a>
+        <section id="contato" style="text-align: center;">
+            <h2>Vamos conversar?</h2>
+            <p>Estou aberta a novos desafios, conexões e projetos na área de publicidade e inovação.</p>
+            <a href="mailto:nhmbarros@gmail.com" class="btn">Enviar um e-mail</a>
         </section>
 
+        <!-- RODAPÉ -->
         <footer>
-            <p>&copy; 2026 Nathalie Barros. Criado com design autoral e código.</p>
+            <p>&copy; 2026 Nathalie Labs. Desenvolvido com carinho e direção de arte autoral.</p>
         </footer>
+
     </div>
 
 </body>
