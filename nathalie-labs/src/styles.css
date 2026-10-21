@@ -1,0 +1,87 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-blush: var(--blush);
+  --color-doi: var(--doi);
+  --color-doi-foreground: var(--doi-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-coral: var(--coral);
+  --color-rose: var(--rose);
+  --color-pearl: var(--pearl);
+  --color-stone: var(--stone);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Paleta da marca, extraída da logo "nb" */
+  --navy: oklch(0.283 0.0388 249.3); /* #1A2B3C */
+  --coral: oklch(0.781 0.1217 20.2); /* #FC9797 */
+  --rose: oklch(0.79 0.0734 18.8); /* #E6A8A8 */
+  --pearl: oklch(0.887 0.0022 17.2); /* #DBD9D9 */
+  --stone: oklch(0.779 0 83.9); /* #B7B7B7 */
+
+  --background: oklch(0.988 0.006 12);
+  --foreground: oklch(0.34 0.028 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.34 0.028 250);
+  --primary: var(--navy);
+  --primary-foreground: oklch(0.98 0.008 12);
+  --secondary: oklch(0.955 0.012 14);
+  --secondary-foreground: oklch(0.36 0.03 250);
+  --muted: oklch(0.965 0.008 14);
+  --muted-foreground: oklch(0.51 0.02 250);
+  --accent: oklch(0.53 0.135 20); /* coral da marca em tom escuro, legível sobre o claro */
+  --accent-foreground: oklch(0.99 0.005 12);
+  --blush: oklch(0.945 0.028 15);
+  --doi: var(--coral);
+  --doi-foreground: var(--navy);
+  --border: oklch(0.283 0.0388 249.3 / 16%);
+  --input: oklch(0.283 0.0388 249.3 / 22%);
+  --ring: oklch(0.53 0.135 20);
+  --shadow-soft: 0 25px 50px -20px oklch(0.283 0.0388 249.3 / 25%);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3 { font-family: var(--font-display); color: var(--color-primary); }
+}
+
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
+@utility link-underline {
+  color: var(--color-primary);
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 2px;
+  transition: color .3s;
+  &:hover { color: var(--color-accent); }
+}
