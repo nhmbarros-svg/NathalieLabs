@@ -14,7 +14,8 @@
             --accent-color: #b37d86;
             --text-main: #3d2c30;
             --text-muted: #7d6569;
-            --border-color: rgba(179, 125, 134, 0.15);
+            --card-bg: #ffffff;
+            --border-color: rgba(179, 125, 134, 0.18);
         }
 
         * {
@@ -27,7 +28,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.8;
+            line-height: 1.7;
             padding: 40px 15px;
         }
 
@@ -35,17 +36,17 @@
             max-width: 850px;
             margin: 0 auto;
             background-color: var(--container-bg);
-            border-radius: 28px;
-            padding: 60px 50px;
-            box-shadow: 0 20px 40px rgba(107, 76, 83, 0.12);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 25px 50px rgba(107, 76, 83, 0.15);
         }
 
-        /* Menu de Navegação Moderno e Limpo */
+        /* Menu de Navegação */
         nav {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-bottom: 60px;
+            gap: 25px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
 
@@ -53,7 +54,7 @@
             text-decoration: none;
             color: var(--text-muted);
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             text-transform: lowercase;
             transition: color 0.3s ease;
         }
@@ -66,70 +67,87 @@
         /* Topo / Logo */
         header {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 50px;
         }
 
-        .logo-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.8rem;
-            color: var(--primary-color);
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 12px;
+        .logo-img {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 15px;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             font-style: italic;
             font-family: 'Playfair Display', serif;
         }
 
-        /* Seções Fluidas (Sem caixas ou bordas pesadas) */
-        section {
-            margin-bottom: 60px;
+        /* Cartões e Blocos Modernos (Estilo Grid/Landing Page) */
+        .card-block {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(107, 76, 83, 0.04);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card-block:hover {
+            transform: translateY(-3px);
+            border-color: rgba(179, 125, 134, 0.4);
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--primary-color);
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             font-weight: 600;
         }
 
         p {
             color: var(--text-muted);
-            margin-bottom: 20px;
-            font-size: 1.05rem;
+            margin-bottom: 15px;
+            font-size: 0.98rem;
+        }
+
+        /* Badge de Destaque */
+        .badge {
+            display: inline-block;
+            background: rgba(179, 125, 134, 0.12);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
         }
 
         /* Sobre Mim & Polaroid */
         .about-content {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
         .polaroid {
             background: white;
-            padding: 14px 14px 35px 14px;
-            box-shadow: 0 10px 25px rgba(107, 76, 83, 0.1);
+            padding: 12px 12px 30px 12px;
+            box-shadow: 0 8px 20px rgba(107, 76, 83, 0.1);
             border-radius: 4px;
             transform: rotate(-2deg);
-            max-width: 220px;
+            max-width: 200px;
             margin: 0 auto;
-            transition: transform 0.3s ease;
-        }
-
-        .polaroid:hover {
-            transform: rotate(0deg) scale(1.02);
         }
 
         .polaroid img {
             width: 100%;
-            height: 210px;
+            height: 190px;
             object-fit: cover;
             border-radius: 2px;
         }
@@ -138,19 +156,7 @@
             flex: 1;
         }
 
-        /* Projetos & Aplicativos (Estilo Editorial) */
-        .project-block {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .project-block:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
+        /* Cabeçalho de Projetos com Ícone */
         .app-header {
             display: flex;
             align-items: center;
@@ -162,46 +168,28 @@
             width: 45px;
             height: 45px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
         }
 
-        .project-block h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
-            font-size: 1.4rem;
-        }
-
-        .tag-dev {
-            display: inline-block;
-            background: rgba(179, 125, 134, 0.12);
-            color: var(--primary-color);
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-        }
-
-        .doi-text {
+        .doi-tag {
             font-family: monospace;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--primary-color);
             background: rgba(179, 125, 134, 0.08);
-            padding: 6px 12px;
+            padding: 6px 10px;
             border-radius: 6px;
             display: inline-block;
-            margin: 10px 0 15px 0;
+            margin: 8px 0 12px 0;
         }
 
-        /* Botões Minimalistas */
+        /* Botões Estilo Link Moderno */
         .btn-link {
             display: inline-block;
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             border-bottom: 2px solid var(--accent-color);
             padding-bottom: 2px;
             transition: color 0.3s, border-color 0.3s;
@@ -213,40 +201,52 @@
             border-color: var(--primary-color);
         }
 
-        /* Rodapé & Redes Sociais */
+        /* Rodapé & Ícones Sociais (Sem @) */
         footer {
             text-align: center;
-            margin-top: 70px;
+            margin-top: 50px;
             border-top: 1px solid var(--border-color);
-            padding-top: 30px;
+            padding-top: 25px;
         }
 
-        .social-links {
+        .social-icons {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-bottom: 20px;
+            gap: 20px;
+            margin-bottom: 15px;
         }
 
-        .social-links a {
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(179, 125, 134, 0.1);
             color: var(--primary-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
         }
 
-        .social-links a:hover {
-            color: var(--accent-color);
+        .social-icons a:hover {
+            background: var(--primary-color);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .social-icons svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
         }
 
         footer p {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
         }
 
         @media (max-width: 768px) {
-            .logo-title { font-size: 3rem; }
             .page-wrapper { padding: 30px 20px; }
             .about-content { flex-direction: column; text-align: center; }
         }
@@ -265,90 +265,114 @@
             <a href="#contato">contato</a>
         </nav>
 
-        <!-- TOPO -->
+        <!-- TOPO COM LOGO DO CANVA -->
         <header id="home">
-            <h1 class="logo-title">Nathalie Labs</h1>
+            <img src="https://raw.githubusercontent.com/nhmbarros-svg/NathalieLabs/main/logo_site.png" alt="Nathalie Labs Logo" class="logo-img">
             <p>Laboratório de Publicidade, Inovação e Tecnologia</p>
         </header>
 
-        <!-- DESTAQUE RECENTE (MARATONA LED GLOBO) -->
-        <section>
-            <h2>Últimas Notícias</h2>
-            <p>É com muito orgulho que compartilho minha seleção nacional entre os 80 universitários participantes da <strong>Maratona de Inteligência Artificial da Academia LED da Globo</strong>. Uma imersão transformadora que une criatividade estratégica, inovação tecnológica e o futuro da comunicação no Brasil.</p>
+        <!-- CARD DESTAQUE: MARATONA LED GLOBO -->
+        <div class="card-block" style="background: linear-gradient(135deg, #fff2f4 0%, #ffffff 100%);">
+            <span class="badge">Destaque Nacional</span>
+            <h2>Selecionada na Maratona de IA da Academia LED Globo</h2>
+            <p>Integrante do grupo seleto de 80 universitários de todo o Brasil participantes da imersão em inteligência artificial, inovação e criatividade na comunicação.</p>
             <a href="https://somos.globo.com/movimento-led/academia-led/noticia/conheca-os-80-estudantes-selecionados-para-maratona-de-ia-da-academia-led-globo.ghtml" target="_blank" class="btn-link">Leia a cobertura oficial da seleção →</a>
-        </section>
+        </div>
 
-        <!-- SOBRE MIM -->
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
+        <!-- CARD SOBRE MIM -->
+        <div class="card-block" id="sobre">
             <div class="about-content">
                 <div class="polaroid">
                     <img src="https://raw.githubusercontent.com/nhmbarros-svg/NathalieLabs/main/eu.jpg" alt="Nathalie Barros">
                     <p style="text-align: center; font-size: 0.8rem; margin-top: 8px; font-family: 'Playfair Display', serif; color: var(--primary-color);">Nathalie Barros</p>
                 </div>
                 <div class="about-text">
-                    <p>Olá! Eu sou a Nathalie, idealizadora do <strong>Nathalie Labs</strong>, acadêmica do último ano de Publicidade e Propaganda na Unicesumar e desenvolvedora de soluções mobile.</p>
-                    <p>Nos últimos anos, descobri que o que mais me move é o ato de criar. Mais do que projetar campanhas tradicionais, busco explorar a intersecção entre a criatividade humana, o design sofisticado e a engenharia de software, construindo ferramentas digitais que geram impacto real na vida das pessoas.</p>
+                    <h2>Sobre Mim</h2>
+                    <p>Idealizadora do <strong>Nathalie Labs</strong>, acadêmica do último ano de Publicidade e Propaganda na Unicesumar e desenvolvedora de soluções mobile.</p>
+                    <p>Unindo a sensibilidade estratégica do design à engenharia de software, busco explorar novas fronteiras na criação de experiências digitais de impacto.</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- PROJETOS & APLICATIVOS -->
-        <section id="projetos">
+        <!-- BLOCO DE PROJETOS & APLICATIVOS -->
+        <div class="card-block" id="projetos">
             <h2>Projetos & Inovação Mobile</h2>
             
             <!-- Meus Medicamentos -->
-            <div class="project-block">
+            <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
                 <div class="app-header">
                     <img src="https://raw.githubusercontent.com/nhmbarros-svg/NathalieLabs/main/meus-medicamentos.png" alt="Ícone Meus Medicamentos" class="app-icon">
-                    <h3>Meus Medicamentos</h3>
+                    <h3 style="font-family: 'Playfair Display', serif; color: var(--primary-color); font-size: 1.25rem;">Meus Medicamentos</h3>
                 </div>
-                <p>Concepção e desenvolvimento de uma solução mobile voltada para o gerenciamento inteligente e autônomo de rotinas medicamentosas, unindo utilidade diária e design centrado no usuário.</p>
-                <a href="https://somos.globo.com/movimento-led/academia-led/noticia/conheca-os-80-estudantes-selecionados-para-maratona-de-ia-da-academia-led-globo.ghtml" target="_blank" class="btn-link">Conheça a proposta e participe como testador →</a>
+                <p>Solução mobile desenvolvida para otimizar o gerenciamento autônomo de rotinas medicamentosas, unindo utilidade diária e design centrado no usuário.</p>
+                <a href="https://somos.globo.com/movimento-led/academia-led/noticia/conheca-os-80-estudantes-selecionados-para-maratona-de-ia-da-academia-led-globo.ghtml" target="_blank" class="btn-link">Participe como testador →</a>
             </div>
 
             <!-- Meus Medicamentos - Cuidador -->
-            <div class="project-block">
+            <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
                 <div class="app-header">
                     <img src="https://raw.githubusercontent.com/nhmbarros-svg/NathalieLabs/main/meus-medicamentos-cuidador.png" alt="Ícone Cuidador" class="app-icon">
-                    <h3>Meus Medicamentos - Cuidador</h3>
+                    <h3 style="font-family: 'Playfair Display', serif; color: var(--primary-color); font-size: 1.25rem;">Meus Medicamentos - Cuidador</h3>
                 </div>
-                <p>Extensão ecossistêmica focada no suporte a cuidadores e familiares, facilitando o monitoramento seguro, remoto e humanizado de tratamentos médicos complexos.</p>
-                <a href="https://somos.globo.com/movimento-led/academia-led/noticia/conheca-os-80-estudantes-selecionados-para-maratona-de-ia-da-academia-led-globo.ghtml" target="_blank" class="btn-link">Acesse a página de testes do app →</a>
+                <p>Extensão voltada para o suporte a cuidadores e familiares, facilitando o monitoramento seguro e humanizado de tratamentos complexos.</p>
+                <a href="https://somos.globo.com/movimento-led/academia-led/noticia/conheca-os-80-estudantes-selecionados-para-maratona-de-ia-da-academia-led-globo.ghtml" target="_blank" class="btn-link">Acesse a página de testes →</a>
             </div>
 
-            <!-- Alcance (Novo Projeto) -->
-            <div class="project-block">
-                <span class="tag-dev">Em desenvolvimento</span>
-                <h3>Alcance</h3>
-                <p>Nova iniciativa em fase inicial de concepção no laboratório, explorando novas fronteiras de expansão digital, engajamento e usabilidade multiplataforma.</p>
+            <!-- Alcance -->
+            <div>
+                <div class="app-header">
+                    <img src="https://raw.githubusercontent.com/nhmbarros-svg/NathalieLabs/main/icone-alcance.png" alt="Ícone Alcance" class="app-icon">
+                    <h3 style="font-family: 'Playfair Display', serif; color: var(--primary-color); font-size: 1.25rem;">Alcance</h3>
+                </div>
+                <span class="badge" style="margin-bottom: 8px;">Em desenvolvimento</span>
+                <p>Nova iniciativa em fase inicial de concepção no laboratório, explorando fronteiras de expansão digital e engajamento multiplataforma.</p>
             </div>
-        </section>
+        </div>
 
-        <!-- PESQUISA & ACADÊMICO -->
-        <section id="pesquisa">
+        <!-- CARD PESQUISA ACADÊMICA -->
+        <!-- CARD PESQUISA ACADÊMICA -->
+        <div class="card-block" id="pesquisa">
             <h2>Pesquisa & Acadêmico</h2>
-            <p>Como bolsista de Iniciação Científica (PIBIC - Unicesumar), desenvolvi investigações voltadas para o impacto das novas tecnologias no ecossistema da comunicação contemporânea.</p>
-            <h3>A Percepção dos Formandos de Publicidade sobre o Uso de Inteligências Artificiais Generativas</h3>
-            <p>Estudo aprofundado sobre os desafios, dilemas éticos e as novas oportunidades que a inteligência artificial traz para a formação acadêmica e o mercado de trabalho publicitário.</p>
-            <div class="doi-text">DOI: 10.29327/epcc-encontro-internacional-de-producao-cientifica-538953.1315721</div>
+            <p>Investigação científica (PIBIC - Unicesumar) sobre os impactos e dilemas éticos das novas tecnologias no ecossistema da comunicação.</p>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--primary-color); margin-bottom: 12px;">A Percepção dos Formandos de Publicidade sobre o Uso de Inteligências Artificiais Generativas</h3>
+            
+            <!-- Selo Oficial do DOI Estilizado -->
+            <a href="https://www.even3.com.br/anais/epcc-encontro-internacional-de-producao-cientifica-538953/1315721-a-percepcao-dos-formandos-de-publicidade-sobre-o-uso-de-inteligencias-artificiais-generativas--desafios-e-oportu/" target="_blank" style="text-decoration: none; display: inline-block; margin: 8px 0 15px 0;">
+                <div style="display: inline-flex; align-items: center; background: #ffffff; border: 1.5px solid #ffbc00; border-radius: 50px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.05); transition: transform 0.2s;">
+                    <!-- Circulo Amarelo com a sigla doi -->
+                    <div style="background: #ffbc00; color: #1a1a1a; font-weight: 800; font-family: sans-serif; font-size: 0.95rem; padding: 6px 12px; border-radius: 50px; letter-spacing: -0.5px;">
+                        doi
+                    </div>
+                    <!-- Número do DOI -->
+                    <span style="color: #1a1a1a; font-weight: 600; font-family: monospace; font-size: 0.85rem; padding: 0 15px;">
+                        10.29327/epcc-encontro-internacional-de-producao-cientifica-538953.1315721
+                    </span>
+                </div>
+            </a>
+            
             <div>
                 <a href="https://www.even3.com.br/anais/epcc-encontro-internacional-de-producao-cientifica-538953/1315721-a-percepcao-dos-formandos-de-publicidade-sobre-o-uso-de-inteligencias-artificiais-generativas--desafios-e-oportu/" target="_blank" class="btn-link">Acessar publicação oficial nos Anais do EPCC →</a>
             </div>
-        </section>
+        </div>
 
-        <!-- CONTATO -->
-        <section id="contato" style="text-align: center; margin-bottom: 0;">
+        <!-- CARD CONTATO -->
+        <div class="card-block" id="contato" style="text-align: center;">
             <h2>Vamos conversar?</h2>
-            <p>Estou sempre aberta a novas conexões, parcerias acadêmicas e desafios na área de inovação e publicidade.</p>
-            <a href="mailto:nhmbarros@gmail.com" class="btn-link" style="font-size: 1.1rem;">nhmbarros@gmail.com</a>
-        </section>
+            <p>Aberta a novas conexões, parcerias e desafios em inovação e publicidade.</p>
+            <a href="mailto:nhmbarros@gmail.com" class="btn-link" style="font-size: 1.05rem;">nhmbarros@gmail.com</a>
+        </div>
 
-        <!-- RODAPÉ -->
+        <!-- RODAPÉ COM ÍCONES DAS REDES SOCIAIS -->
         <footer>
-            <div class="social-links">
-                <a href="https://www.instagram.com/oficialnathalielabs/" target="_blank">Instagram (@oficialnathalielabs)</a>
-                <a href="https://www.linkedin.com/in/nathalie-barros/" target="_blank">LinkedIn (Nathalie Barros)</a>
+            <div class="social-icons">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/oficialnathalielabs/" target="_blank" title="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/nathalie-barros/" target="_blank" title="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
             </div>
             <p>&copy; 2026 Nathalie Labs. Desenvolvido com direção de arte autoral e código personalizado.</p>
         </footer>
