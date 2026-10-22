@@ -19,12 +19,12 @@ function Index() {
       <section className="bg-blush/60">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.2fr_1fr] md:py-28">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Publicidade · Inovação · Tecnologia</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Design · Inovação · Tecnologia</p>
             <h1 className="mt-4 text-5xl leading-tight md:text-7xl">
-              Onde a estratégia <em>encontra</em> o código.
+              Estratégia <em>e</em> códigos.
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-              Nathalie Labs é o laboratório de Nathalie Barros: criação publicitária, apps mobile e pesquisa sobre IA na comunicação.
+              Nathalie Labs é o meu espaço de criatividade, desenvolvimento e conquistas.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link to="/projetos" className="rounded-full bg-primary px-7 py-3 font-medium text-primary-foreground hover:bg-accent">Ver projetos</Link>
@@ -33,7 +33,7 @@ function Index() {
           </div>
           <div className="relative mx-auto">
             <div className="rotate-2 rounded bg-card p-3 pb-10 shadow-soft">
-              <img src={`${IMG}/eu.jpg`} alt="Nathalie Barros" className="h-96 w-72 object-cover" />
+              <img src={`${IMG}/.perfil-novo.jpg`} alt="Nathalie Barros" className="h-96 w-72 object-cover" />
               <p className="mt-3 text-center font-display text-primary">Nathalie Barros</p>
             </div>
           </div>
