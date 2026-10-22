@@ -33,7 +33,7 @@ function Index() {
           </div>
           <div className="relative mx-auto">
             <div className="rotate-2 rounded bg-card p-3 pb-10 shadow-soft">
-              <img src={`${IMG}/.perfil-novo.jpg`} alt="Nathalie Barros" className="h-96 w-72 object-cover" />
+              <img src={`${IMG}/.perfil-novo.png`} alt="Nathalie Barros" className="h-96 w-72 object-cover" />
               <p className="mt-3 text-center font-display text-primary">Nathalie Barros</p>
             </div>
           </div>
