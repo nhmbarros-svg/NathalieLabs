@@ -34,7 +34,7 @@ function Index() {
           <div className="relative mx-auto">
             <div className="rotate-2 rounded bg-card p-3 pb-10 shadow-soft">
               <img 
-                src="https://raw.githubusercontent.com/nhmbarros-svg/NathalieLabs/main/perfil-novo.jpg" 
+                src="https://raw.githubusercontent.com/nhmbarros-svg/NathalieLabs/main/perfil-novo.png" 
                 alt="Nathalie Barros" 
                 className="w-full h-auto object-cover rounded"
               />
