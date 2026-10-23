@@ -17,7 +17,7 @@ function Sobre() {
       <PageHero
         eyebrow="Sobre mim"
         title="Continuamos avançando, abrindo novas portas(...)."
-        text="Conheça a trajetória"
+        text="Conheça minha trajetória"
       />
 
       <section className="mx-auto max-w-4xl px-6 py-20">
