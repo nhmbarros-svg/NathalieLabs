@@ -72,6 +72,12 @@ export function Footer() {
             <Link key={l.to} to={l.to} className="opacity-80 hover:opacity-100">{l.label}</Link>
           ))}
         </div>
+        <blockquote className="mx-auto mb-6 max-w-xl text-center italic text-muted-foreground opacity-90 font-display">
+  “Continuamos avançando, abrindo novas portas e fazendo coisas novas, porque somos curiosos e a curiosidade continua nos levando por novos caminhos.”
+  <span className="mt-2 block font-sans text-xs font-semibold not-italic tracking-wider uppercase opacity-75">
+    — Walt Disney
+  </span>
+</blockquote>
         <div className="flex flex-wrap gap-3">
           {[
             { label: "E-mail", href: "mailto:nhmbarros@gmail.com", Icon: AtSign },
