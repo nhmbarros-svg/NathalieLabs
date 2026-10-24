@@ -6,6 +6,7 @@ import logoAsset from "@/assets/nb-02.svg.asset.json";
 export const IMG = "https://raw.githubusercontent.com/nhmbarros-svg/NathalieLabs/main";
 export const LED_URL =
   "https://somos.globo.com/movimento-led/academia-led/noticia/conheca-os-80-estudantes-selecionados-para-maratona-de-ia-da-academia-led-globo.ghtml";
+export const TESTE_URL = "https://sites.google.com/view/teste-app-mm/in%C3%ADcio";
 
 const links = [
   { to: "/", label: "Home" },
@@ -126,7 +127,7 @@ export function Footer() {
       </div>
 
       <p className="border-t border-primary-foreground/15 py-5 text-center text-xs opacity-70">
-        &copy; 2026 Nathalie Labs. Desenvolvido por Nathalie Barros.
+        &copy; 2026 Nathalie Labs. Desenvolvido com dire&ccedil;&atilde;o de arte autoral e c&oacute;digo personalizado.
       </p>
     </footer>
   );
@@ -145,8 +146,8 @@ export function PageHero({ eyebrow, title, text }: { eyebrow: string; title: str
 }
 
 export const projects = [
-  { name: "Meus Medicamentos", icon: "meus-medicamentos.png", text: "Solução mobile para otimizar o gerenciamento autônomo de rotinas medicamentosas, unindo utilidade diária e design centrado no usuário.", cta: "Participe como testador", href: LED_URL },
-  { name: "Meus Medicamentos – Cuidador", icon: "meus-medicamentos-cuidador.png", text: "Extensão voltada a cuidadores e familiares, facilitando o monitoramento seguro e humanizado de tratamentos complexos.", cta: "Acesse a página de testes", href: LED_URL },
+  { name: "Meus Medicamentos", icon: "meus-medicamentos.png", text: "Solução mobile para otimizar o gerenciamento autônomo de rotinas medicamentosas, unindo utilidade diária e design centrado no usuário.", cta: "Participe como testador", href: TESTE_URL },
+  { name: "Meus Medicamentos – Cuidador", icon: "meus-medicamentos-cuidador.png", text: "Extensão voltada a cuidadores e familiares, facilitando o monitoramento seguro e humanizado de tratamentos complexos.", cta: "Acesse a página de testes", href: TESTE_URL },
   { name: "Alcance", icon: "icone-alcance.png", text: "Nova iniciativa em fase inicial de concepção, explorando fronteiras de expansão digital e engajamento multiplataforma.", badge: "Em desenvolvimento" },
 ];
 
