@@ -24,17 +24,21 @@ function Index() {
               Estratégia <em>e</em> códigos.
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-              Nathalie Labs é o meu espaço de criatividade, desenvolvimento e conquistas.
+              Publicidade e tecnologia lado a lado. Conheça meus aplicativos, pesquisas em inteligência artificial e projetos autorais.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link to="/projetos" className="rounded-full bg-primary px-7 py-3 font-medium text-primary-foreground hover:bg-accent">Ver projetos</Link>
-              <Link to="/sobre" className="rounded-full border border-primary px-7 py-3 font-medium text-primary hover:bg-card">Conheça a Nathalie</Link>
+              <Link to="/projetos" className="rounded-full bg-primary px-7 py-3 font-medium text-primary-foreground hover:bg-accent">
+                Ver projetos
+              </Link>
+              <Link to="/sobre" className="rounded-full border border-primary px-7 py-3 font-medium text-primary hover:bg-card">
+                Conheça a Nathalie
+              </Link>
             </div>
           </div>
           <div className="relative mx-auto">
             <div className="rotate-2 rounded bg-card p-3 pb-10 shadow-soft">
               <img 
-                src="https://raw.githubusercontent.com/nhmbarros-svg/NathalieLabs/main/perfil-novo.png" 
+                src="https://raw.githubusercontent.com/nhmbarros-svg/NathalieLabs/main/perfil-novo.jpg" 
                 alt="Nathalie Barros" 
                 className="w-full h-auto object-cover rounded"
               />
@@ -50,8 +54,12 @@ function Index() {
           <div>
             <span className="text-xs font-bold uppercase tracking-[0.2em] opacity-70">Destaque nacional</span>
             <h2 className="mt-2 text-3xl text-primary-foreground">Selecionada na Maratona de IA da Academia LED Globo</h2>
-            <p className="mt-3 opacity-80">Entre os 80 universitários de todo o Brasil na imersão em inteligência artificial, inovação e criatividade na comunicação.</p>
-            <a href={LED_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block border-b-2 border-primary-foreground/50 pb-0.5 font-semibold">Leia a cobertura oficial →</a>
+            <p className="mt-3 opacity-80">
+              Entre os 80 universitários de todo o Brasil na imersão em inteligência artificial, inovação e criatividade na comunicação.
+            </p>
+            <a href={LED_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block border-b-2 border-primary-foreground/50 pb-0.5 font-semibold">
+              Leia a cobertura oficial &rarr;
+            </a>
           </div>
         </div>
       </section>
@@ -59,7 +67,7 @@ function Index() {
       <section className="mx-auto max-w-6xl px-6 py-10">
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-4xl">Projetos em destaque</h2>
-          <Link to="/projetos" className="link-underline text-sm">Todos os projetos →</Link>
+          <Link to="/projetos" className="link-underline text-sm">Todos os projetos &rarr;</Link>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {projects.map((p) => <ProjectCard key={p.name} p={p} />)}
@@ -72,13 +80,13 @@ function Index() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Pesquisa · PIBIC</p>
             <h3 className="mt-3 text-2xl">IA generativa na formação publicitária</h3>
             <p className="mt-3 text-muted-foreground">Publicado nos Anais do EPCC.</p>
-            <span className="link-underline mt-6 inline-block text-sm">Ler sobre a pesquisa →</span>
+            <span className="link-underline mt-6 inline-block text-sm">Ler sobre a pesquisa &rarr;</span>
           </Link>
           <Link to="/contato" className="rounded-3xl bg-secondary p-10 transition hover:shadow-soft">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Contato</p>
             <h3 className="mt-3 text-2xl">Vamos conversar?</h3>
             <p className="mt-3 text-muted-foreground">Aberta a conexões, parcerias e novos desafios.</p>
-            <span className="link-underline mt-6 inline-block text-sm">Entrar em contato →</span>
+            <span className="link-underline mt-6 inline-block text-sm">Entrar em contato &rarr;</span>
           </Link>
         </div>
       </section>
