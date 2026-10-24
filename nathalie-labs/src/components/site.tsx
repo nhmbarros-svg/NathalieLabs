@@ -121,13 +121,13 @@ export function Footer() {
         <blockquote className="mx-auto mt-12 max-w-2xl border-t border-primary-foreground/15 pt-8 text-center font-display italic text-primary-foreground/90">
           &ldquo;Continuamos avan&ccedil;ando, abrindo novas portas e fazendo coisas novas, porque somos curiosos e a curiosidade continua nos levando por novos caminhos.&rdquo;
           <span className="mt-2 block font-sans text-xs font-semibold not-italic tracking-wider uppercase opacity-75">
-          Walt Disney
+            &mdash; Walt Disney
           </span>
         </blockquote>
       </div>
 
       <p className="border-t border-primary-foreground/15 py-5 text-center text-xs opacity-70">
-        &copy; 2026 Nathalie Labs. Desenvolvido por Nathalie Barros.
+        &copy; 2026 Nathalie Labs. Desenvolvido com dire&ccedil;&atilde;o de arte autoral e c&oacute;digo personalizado.
       </p>
     </footer>
   );
@@ -146,9 +146,28 @@ export function PageHero({ eyebrow, title, text }: { eyebrow: string; title: str
 }
 
 export const projects = [
-  { name: "Meus Medicamentos", icon: "meus-medicamentos.png", text: "Solução mobile para otimizar o gerenciamento autônomo de rotinas medicamentosas, unindo utilidade diária e design centrado no usuário.", cta: "Participe como testador", href: TESTE_URL },
-  { name: "Meus Medicamentos – Cuidador", icon: "meus-medicamentos-cuidador.png", text: "Extensão voltada a cuidadores e familiares, facilitando o monitoramento seguro e humanizado de tratamentos complexos.", cta: "Acesse a página de testes", href: TESTE_URL },
-  { name: "Alcance", icon: "icone-alcance.png", text: "Nova iniciativa em fase inicial de concepção, explorando fronteiras de expansão digital e engajamento multiplataforma.", badge: "Em desenvolvimento" },
+  {
+    name: "Meus Medicamentos",
+    icon: "meus-medicamentos.png",
+    badge: "Em testes na Play Store",
+    text: "Aplicativo voltado à organização da rotina de medicamentos para uso pessoal. Conheça o projeto e saiba como participar dos testes.",
+    cta: "Saiba como participar dos testes",
+    href: TESTE_URL,
+  },
+  {
+    name: "Meus Medicamentos – Cuidador",
+    icon: "meus-medicamentos-cuidador.png",
+    badge: "Em finalização · Aberto a testes",
+    text: "Disponível para testes, com refinamentos em andamento.",
+    cta: "Saiba como participar dos testes",
+    href: TESTE_URL,
+  },
+  {
+    name: "Alcance",
+    icon: "icone-alcance.png",
+    badge: "Em concepção · Protótipo inicial",
+    text: "Projeto em fase de concepção, com um protótipo Android executado localmente para explorar e refinar a ideia.",
+  },
 ];
 
 export function ProjectCard({ p }: { p: (typeof projects)[number] }) {
@@ -156,9 +175,17 @@ export function ProjectCard({ p }: { p: (typeof projects)[number] }) {
     <div className="flex flex-col rounded-2xl border bg-card p-7 transition hover:-translate-y-1 hover:shadow-soft">
       <img src={`${IMG}/${p.icon}`} alt="" className="h-14 w-14 rounded-xl border object-cover" />
       <h3 className="mt-5 text-xl">{p.name}</h3>
-      {p.badge && <span className="mt-2 w-fit rounded-full bg-secondary px-3 py-1 text-[0.7rem] font-bold uppercase tracking-wide text-secondary-foreground">{p.badge}</span>}
+      {p.badge && (
+        <span className="mt-2 w-fit rounded-full bg-secondary px-3 py-1 text-[0.7rem] font-bold uppercase tracking-wide text-secondary-foreground">
+          {p.badge}
+        </span>
+      )}
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
-      {p.href && <a href={p.href} target="_blank" rel="noreferrer" className="link-underline mt-5 w-fit text-sm">{p.cta} &rarr;</a>}
+      {p.href && (
+        <a href={p.href} target="_blank" rel="noreferrer" className="link-underline mt-5 w-fit text-sm">
+          {p.cta} &rarr;
+        </a>
+      )}
     </div>
   );
 }
