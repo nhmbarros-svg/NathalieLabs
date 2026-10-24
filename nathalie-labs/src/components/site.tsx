@@ -127,7 +127,7 @@ export function Footer() {
       </div>
 
       <p className="border-t border-primary-foreground/15 py-5 text-center text-xs opacity-70">
-        &copy; 2026 Nathalie Labs. Desenvolvido com dire&ccedil;&atilde;o de arte autoral e c&oacute;digo personalizado.
+        &copy; 2026 Nathalie Labs. Desenvolvido por Nathalie Barros.
       </p>
     </footer>
   );
