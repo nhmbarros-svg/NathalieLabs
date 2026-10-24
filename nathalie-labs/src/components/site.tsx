@@ -121,7 +121,7 @@ export function Footer() {
         <blockquote className="mx-auto mt-12 max-w-2xl border-t border-primary-foreground/15 pt-8 text-center font-display italic text-primary-foreground/90">
           &ldquo;Continuamos avan&ccedil;ando, abrindo novas portas e fazendo coisas novas, porque somos curiosos e a curiosidade continua nos levando por novos caminhos.&rdquo;
           <span className="mt-2 block font-sans text-xs font-semibold not-italic tracking-wider uppercase opacity-75">
-            &mdash; Walt Disney
+          Walt Disney
           </span>
         </blockquote>
       </div>
