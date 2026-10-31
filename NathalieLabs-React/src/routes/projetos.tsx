@@ -5,25 +5,40 @@ export const Route = createFileRoute("/projetos")({
   head: () => ({
     meta: [
       { title: "Projetos | Nathalie Labs" },
-      { name: "description", content: "Apps mobile do Nathalie Labs: Meus Medicamentos, versão Cuidador e Alcance." },
+      {
+        name: "description",
+        content: "Aplicativos mobile e projetos autorais desenvolvidos por Nathalie Barros.",
+      },
       { property: "og:title", content: "Projetos | Nathalie Labs" },
-      { property: "og:description", content: "Apps mobile e inovação do Nathalie Labs." },
+      {
+        property: "og:description",
+        content: "Aplicativos mobile e projetos autorais desenvolvidos por Nathalie Barros.",
+      },
     ],
   }),
-  component: () => (
+  component: ProjetosPage,
+});
+
+function ProjetosPage() {
+  return (
     <>
-      <PageHero eyebrow="Projetos" title="Inovação mobile com propósito." text="Aplicativos pensados para resolver problemas reais do dia a dia, com design centrado no usuário." />
+      <PageHero
+        eyebrow="Portfólio"
+        title="Soluções digitais e produtos mobile."
+        text="Aplicativos desenvolvidos com foco em usabilidade, acessibilidade e impacto prático na rotina."
+      />
+
       <section className="mx-auto grid max-w-6xl gap-6 px-6 py-20 md:grid-cols-3">
         {projects.map((p) => {
-          // Verifica se é o projeto "Meus Medicamentos" pelo nome
-          const isMeusMedicamentos = p.name.toLowerCase().includes("meus medicamentos");
+          // Usa href se o projeto tiver rota própria cadastrada ou faz o fallback para o case Meus Medicamentos
+          const href = p.href || (p.name.toLowerCase().includes("meus medicamentos") ? "/meus-medicamentos" : null);
 
-          if (isMeusMedicamentos) {
+          if (href) {
             return (
-              <Link 
-                to="/meus-medicamentos" 
+              <Link
                 key={p.name}
-                className="transition-transform hover:scale-[1.02] block"
+                to={href}
+                className="block transition-transform hover:scale-[1.02]"
               >
                 <ProjectCard p={p} />
               </Link>
@@ -34,5 +49,5 @@ export const Route = createFileRoute("/projetos")({
         })}
       </section>
     </>
-  ),
-});
+  );
+}
