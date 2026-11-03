@@ -14,6 +14,8 @@ export const Route = createFileRoute("/")({
         content: "Laboratório de Nathalie Barros: desenvolvimento mobile, estratégia criativa e pesquisa em inteligência artificial.",
       },
     ],
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1825365098219642"
+     crossorigin="anonymous"></script>
   }),
   component: Index,
 });
