@@ -13,7 +13,6 @@ const links = [
   { to: "/sobre", label: "Sobre mim" },
   { to: "/projetos", label: "Projetos" },
   { to: "/pesquisa", label: "Pesquisa" },
-  { to: "/contato", label: "Contato" },
 ] as const;
 
 export function Header() {
